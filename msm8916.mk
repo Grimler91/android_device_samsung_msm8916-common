@@ -282,11 +282,11 @@ PRODUCT_PACKAGES += \
 include $(LOCAL_PATH)/prop.mk
 
 # Radio
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    libshim_secril \
-    libxml2 \
-    macloader
+#PRODUCT_PACKAGES += \
+#    librmnetctl \
+#    libshim_secril \
+#    libxml2 \
+#    macloader
 
 # Rootdir
 PRODUCT_PACKAGES += \
