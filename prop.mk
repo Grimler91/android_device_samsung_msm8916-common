@@ -1,3 +1,21 @@
+# Google Play Store patch to see all apps
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.opengles.version=196608
+
+# turn onscreen nav
+PRODUCT_PROPERTY_OVERRIDES += \
+	qemu.hw.mainkeys=0
+
+# Memory optimizations
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.config.avoid_gfx_accel=true \
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=adb \
+    service.adb.root=1
+
 # Assistant
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
@@ -16,7 +34,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio offload
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.offload.buffer.size.kb=32 \
+    vendor.audio.offload.buffer.size.kb=128 \
     vendor.audio.offload.gapless.enabled=true \
     audio.offload.min.duration.secs=30 \
     vendor.audio.offload.track.enable=true \
@@ -132,13 +150,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true
 
 # Misc
+#    ro.data.large_tcp_window_size=true \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     dev.pm.dyn_samplingrate=1 \
     persist.hwc.enable_vds=1 \
     persist.hwc.mdpcomp.enable=true \
     persist.sys.storage_preload=1 \
-    ro.data.large_tcp_window_size=true \
     sys.disable_ext_animation=1
 
 # OEM Unlock
@@ -196,5 +214,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0
 
 # ZRAM - Size in MB
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.zram.size=128
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    ro.config.zram.size=128

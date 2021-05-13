@@ -67,6 +67,8 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_PROVIDES_CAMERA_HAL := true
 TARGET_USE_VENDOR_CAMERA_EXT := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
+# For legacy HAL1 camera
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Display
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
@@ -101,6 +103,9 @@ AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
+# memfd
+TARGET_HAS_MEMFD_BACKPORT := true
 
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):libinit_msm8916
@@ -138,6 +143,7 @@ ifneq ($(wildcard $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-7.2/bin
 endif
 
 # Malloc implementation
+# RT - let's change this to false and see what happens - no change with it true or false
 MALLOC_SVELTE := true
 
 # Media

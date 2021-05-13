@@ -8,6 +8,7 @@
     <integer translatable="false" name="config_bluetooth_operating_voltage_mv">3300</integer>
 
     <!-- Default list of files pinned by the Pinner Service -->
+<!-- RT https://review.lineageos.org/c/LineageOS/android_device_samsung_msm8226-common/+/292805
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/system/framework/arm/boot-framework.oat"</item>
         <item>"/system/framework/boot-framework.vdex"</item>
@@ -24,6 +25,7 @@
         <item>"/product/priv-app/SystemUI/oat/arm/SystemUI.odex"</item>
         <item>"/system/lib/libsurfaceflinger.so"</item>
     </string-array>
+-->
 
     <!-- List of files pinned by the Pinner Service with the JIT Zygote boot image b/119800099 -->
     <string-array translatable="false" name="config_jitzygoteBootImagePinnerServiceFiles">

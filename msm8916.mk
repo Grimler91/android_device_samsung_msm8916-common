@@ -63,15 +63,18 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-ifneq ($(USE_CUSTOM_MIXER_PATHS), true)
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
-endif
+# RT gt5note10wifi needs its own mixer_paths
+#ifneq ($(USE_CUSTOM_MIXER_PATHS), true)
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
+#endif
 
 # Bluetooth
+# RT - add a2dp for audio over bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth.a2dp@1.0-service
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
@@ -119,13 +122,20 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8916 \
     libtinyxml \
     libtinyxml2 \
-    memtrack.msm8916 \
-    vendor.lineage.livedisplay@2.0-service.samsung-qcom
+    memtrack.msm8916
+# RT - vendor.lineage.livedisplay causes tablet to get stuck at bootanimation
+#    vendor.lineage.livedisplay@2.0-service.samsung-qcom
+
+#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+#    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+#    ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # DRM
+#   8108  03-20 20:36:43.309  2384  2384 F linker  : CANNOT LINK EXECUTABLE "/vendor/bin/hw/android.hardware.drm@1.1-service.widevine": cannot locate symbol "_ZN6google8protobuf8internal13empty_string_E" referenced by "/system/vendor/lib/libwvhidl.so"...
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
+    android.hardware.drm@1.1-service.widevine \
     android.hardware.drm@1.3-service.clearkey
 
 # Encryption
@@ -177,11 +187,15 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
 
+# RT - vndservicemanager needed to boot otherwise
+#   1965  10-02 19:46:30.548     0     0 I [1:           init:    1] init: Command 'start vndservicemanager' action=init (/system/etc/init/hw/init.rc:397) took 0ms and failed: service vndservicemanager not found
+# it gets stuck at bootanimation without vndservicemanager
 PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    vndservicemanager
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -312,10 +326,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Sensor HAL
+# RT sensor needs to be passthrough and sensors.msm8916 needs to be removed in order to work
+#    android.hardware.sensors@1.0-service \
+#    sensors.msm8916
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    sensors.msm8916
+    android.hardware.sensors@1.0-impl
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -330,9 +345,10 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # Vibrator
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service
+# RT vibrator causes stuck at bootanimation in previous releases
+#PRODUCT_PACKAGES += \
+#    android.hardware.vibrator@1.0-impl \
+#    android.hardware.vibrator@1.0-service
 
 # Wifi configuration files
 PRODUCT_COPY_FILES += \

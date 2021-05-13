@@ -130,8 +130,6 @@ void set_common_properties()
 {
 	property_override("ro.ril.telephony.mqanelements", "6");
 
-	property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
-
 	/* 
 	 * Check for multi-sim devices
 	 * check if the simslot count file exists 
