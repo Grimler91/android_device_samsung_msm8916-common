@@ -3,7 +3,7 @@ allow vendor_init audio_data_file:dir setattr;
 allow vendor_init bluetooth_data_file:dir setattr;
 allow vendor_init camera_data_file:dir setattr;
 allow vendor_init dhcp_data_file:dir setattr;
-allow vendor_init dpmd_data_file:dir { getattr search setattr }
+allow vendor_init dpmd_data_file:dir { getattr search setattr } ;
 allow vendor_init media_data_file:dir getattr;
 allow vendor_init proc:file write;
 allow vendor_init radio_data_file:file { open setattr write };
