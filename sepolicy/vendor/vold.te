@@ -1,4 +1,5 @@
 #============= vold ==============
 allow vold efs_file:dir { ioctl open read };
-allow vold sysfs_mmc_host:file write;
 allow vold hal_bootctl_hwservice:hwservice_manager find;
+allow vold persist_data_file:dir read;
+allow vold sysfs_mmc_host:file write;
