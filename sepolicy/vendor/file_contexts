@@ -2,5 +2,39 @@
 /firmware-modem                                         u:object_r:firmware_file:s0
 /tombstones                                             u:object_r:rootfs:s0
 
-# HIDLs
-/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software u:object_r:hal_gatekeeper_default_exec:s0
+####################################
+# Data Files
+#
+
+# Wifi
+/data/\.cid\.info               u:object_r:wifi_data_file:s0
+/data/\.wifiver\.info           u:object_r:wifi_data_file:s0
+
+####################################
+# HIDL
+#
+
+# DRM
+# kanged from https://github.com/LineageOS/android_device_motorola_msm8916-common/tree/lineage-18.1/sepolicy
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                u:object_r:hal_drm_widevine_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.3-service\.clearkey                u:object_r:hal_drm_clearkey_exec:s0
+/data/vendor/mediadrm(/.*)?                                                                 u:object_r:media_data_file:s0
+
+# Gatekeeper
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gatekeeper@1\.0-service\.software     u:object_r:hal_gatekeeper_default_exec:s0
+
+# Lights
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service.msm8916            u:object_r:hal_light_default_exec:s0
+
+# Live Display
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service.samsung-qcom   u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+#/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service-legacymm       u:object_r:hal_lineage_livedisplay_qti_exec:s0
+#/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service-sdm            u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+#/system/bin/hw/lineage\.livedisplay@2\.0-service.samsung-qcom                           u:object_r:hal_lineage_livedisplay_qti_exec:s0
+#/system/bin/hw/lineage\.livedisplay@2\.0-service-sdm                                    u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service\.msm8916           u:object_r:hal_power_default_exec:s0

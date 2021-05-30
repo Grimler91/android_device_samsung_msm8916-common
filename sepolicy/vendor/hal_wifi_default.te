@@ -1,0 +1,2 @@
+#============= hal_wifi_default ==============
+allow hal_wifi_default vendor_default_prop:property_service set;

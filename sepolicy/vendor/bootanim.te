@@ -1,0 +1,4 @@
+#============= bootanim ==============
+allow bootanim device:chr_file { ioctl open read write };
+allow bootanim sysfs:file { getattr open read };
+allow bootanim userspace_reboot_exported_prop:file { open read };
