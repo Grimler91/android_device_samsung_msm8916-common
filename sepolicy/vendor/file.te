@@ -1,2 +1,13 @@
+# Efs types
+type wifi_efs_file, file_type;
+
+# Sysfs types
+type sysfs_camera_writable, sysfs_type, fs_type;
+type sysfs_charger, fs_type, sysfs_type, mlstrustedobject;
+
+# debugfs types
+type debugfs_mali, fs_type, debugfs_type;
+type debugfs_ion, fs_type, debugfs_type;
+
 type hal_drm_clearkey, domain;
 type hal_drm_clearkey_exec, exec_type, vendor_file_type, file_type;

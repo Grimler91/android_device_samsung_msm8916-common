@@ -1,5 +1,6 @@
 #============= init ==============
 allow init block_device:blk_file write;
+allow init btnvtool_exec:file execute_no_trans;
 allow init default_android_hwservice:hwservice_manager add;
 allow init efs_file:dir mounton;
 allow init hal_drm_hwservice:hwservice_manager add;

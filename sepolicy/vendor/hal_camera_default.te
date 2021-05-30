@@ -4,3 +4,5 @@ allow hal_camera_default default_prop:property_service set;
 allow hal_camera_default mediaserver:binder call;
 allow hal_camera_default mediaserver:binder transfer;
 allow hal_camera_default system_prop:property_service set;
+allow hal_camera_default sysfs_camera_writable:dir search;
+allow hal_camera_default sysfs_camera_writable:file r_file_perms;
