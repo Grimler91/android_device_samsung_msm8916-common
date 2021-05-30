@@ -1,4 +1,3 @@
 #============= hal_lineage_livedisplay_qti ==============
-allow hal_lineage_livedisplay_qti sysfs:file { open read write };
-allow hal_lineage_livedisplay_qti sysfs_livedisplay_tuneable:file { getattr open read write };
+allow hal_lineage_livedisplay_qti sysfs_livedisplay_tuneable:file rw_file_perms;
 

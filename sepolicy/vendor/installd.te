@@ -1,2 +1,2 @@
 #============= installd ==============
-allow installd device:file { open write };
+allow installd device:file w_file_perms;

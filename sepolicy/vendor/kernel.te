@@ -1,4 +1,3 @@
 #============= kernel ==============
 allow kernel self:capability dac_override;
 allow kernel vfat:dir search;
-

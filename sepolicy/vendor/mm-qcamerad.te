@@ -1,2 +1,1 @@
 #============= mm-qcamerad ==============
-allow mm-qcamerad sysfs:file { getattr open read write };

@@ -1,2 +1,1 @@
 #============= netd ==============
-allow netd device:file { open write };
