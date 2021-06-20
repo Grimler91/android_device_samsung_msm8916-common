@@ -5,6 +5,7 @@ type wifi_efs_file, file_type;
 type sysfs_camera_writable, sysfs_type, fs_type;
 type sysfs_charger, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_display, fs_type, sysfs_type, mlstrustedobject;
+type sysfs_mdnie, fs_type, sysfs_type, mlstrustedobject;
 
 # debugfs types
 type debugfs_mali, fs_type, debugfs_type;
