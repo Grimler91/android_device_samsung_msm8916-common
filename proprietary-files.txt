@@ -67,9 +67,10 @@ vendor/lib/mediadrm/libprmediadrmplugin.so
 # FM
 bin/fm_qsoc_patches:vendor/bin/fm_qsoc_patches
 bin/fmconfig:vendor/bin/fmconfig
--lib/vendor.qti.hardware.fm@1.0.so:vendor/lib/vendor.qti.hardware.fm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
+# source unknown:
+-lib/vendor.qti.hardware.fm@1.0.so:vendor/lib/vendor.qti.hardware.fm@1.0.so|a32ae5e1a604cc0fa0f1e0704616b5af4f0188a9
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|f64cc14d4c2ac1387a618ac90bd8688efd9fab1e
+vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so|8ac093a196439dc403b2fa099d838c33242efa82
 
 # GPS - From Crackling
 bin/loc_launcher:vendor/bin/loc_launcher
@@ -212,7 +213,7 @@ bin/irsc_util:vendor/bin/irsc_util
 lib/libgdmcprov.so:vendor/lib/libgdmcprov.so
 
 # STLport
-vendor/lib/libstlport.so|76fbc529632aae39370a7f28a1d839cd
+vendor/lib/libstlport.so|e61ef21decc21472e06eacc841e7d61bf68ca9f3
 
 # Thermal
 vendor/bin/thermal-engine
@@ -226,8 +227,8 @@ bin/time_daemon:vendor/bin/time_daemon
 vendor/lib/libTimeService.so
 
 # Widevine - bullhead
-vendor/lib/drm/libdrmwvmplugin.so|6cfb61cd247076409a3a4e3f6ddecf24
-vendor/lib/libWVStreamControlAPI_L1.so|74e4a4ba035ed5da9b81cc2cc3929151
-vendor/lib/libwvdrm_L1.so|a19e8a30943ed66d51f58504673e72c4
-vendor/lib/libwvm.so|dcd816349037aa40f0e5ff9d141c70cc
-vendor/lib/mediadrm/libwvdrmengine.so|76d0add4f3f259030ef4ffb14dc92a2e
+vendor/lib/drm/libdrmwvmplugin.so|3bee766222895f524421eb996ca6a08bcf95f19f
+vendor/lib/libWVStreamControlAPI_L1.so|6b28492ac55b9a3d86993343cf2c8b55240b3420
+vendor/lib/libwvdrm_L1.so|3eaf8ed1cb337608a1ccdb80d2c95804e7aea323
+vendor/lib/libwvm.so|59c4c078f4b897ddac8f665309b7a3f25522f207
+vendor/lib/mediadrm/libwvdrmengine.so|76b59510737c06a3f4121edf08aaa85c10da8220
