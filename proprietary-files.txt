@@ -1,4 +1,4 @@
-# Samsung Package Version J510FNXXU2BQJ8_J510FNOXY2BQJ8 (unless otherwise specified and/or tagged)
+# Samsung Package Version J510FNXXS3BTJ7_J510FNTEN3BTJ7 (unless otherwise specified and/or tagged)
 
 # ADSP
 bin/adsprpcd:vendor/bin/adsprpcd
@@ -29,8 +29,6 @@ bin/hci_qcomm_init:vendor/bin/hci_qcomm_init
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-cameradata/datapattern_420sp.yuv
-cameradata/datapattern_front_420sp.yuv
 etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
@@ -47,10 +45,7 @@ vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera_faceproc.so|8e6a95d0dd0d282f96cc905c11c1a738
 
 # DRM
-bin/qcom-system-daemon:vendor/bin/qcom-system-daemon
-lib/libdrmdecrypt.so:vendor/lib/libdrmdecrypt.so
 lib/libhdcp2.so:vendor/lib/libhdcp2.so
-vendor/lib/drm/libdrmprplugin.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libmmQSM.so
@@ -125,7 +120,6 @@ etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
 # Media
 etc/somxreg.conf
 lib/libOmxVdecHevc.so:vendor/lib/libOmxVdecHevc.so
-lib/libplayready_v2.5.so:vendor/lib/libplayready_v2.5.so
 lib/libsomx263dsw.so:vendor/lib/libsomx263dsw.so
 lib/libsomx264dsw.so:vendor/lib/libsomx264dsw.so
 lib/libsomxaacd.so:vendor/lib/libsomxaacd.so
@@ -147,8 +141,6 @@ vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libhwdaphal.so
-vendor/lib/libmm-abl-oem.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmm-disp-apis.so
 vendor/lib/libmm-hdcpmgr.so
@@ -163,15 +155,12 @@ vendor/media/PFFprec_600.emd
 bin/ssr_diag:vendor/bin/ssr_diag
 bin/ssr_setup:vendor/bin/ssr_setup
 bin/subsystem_ramdump:vendor/bin/subsystem_ramdump
-bin/wdsdaemon:vendor/bin/wdsdaemon
 lib/libedmnativehelper.so:vendor/lib/libedmnativehelper.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libscve.so
 vendor/lib/libscve_mv.so
 
 # Post-processing
-vendor/lib/libdisp-aba.so
-vendor/lib/libmm-abl.so
 vendor/lib/libmm-als.so
 
 # Radio
@@ -200,12 +189,10 @@ vendor/lib/libsubsystem_control.so
 vendor/lib/libxml.so
 
 # RIL
-lib/libaudio-ril.so:vendor/lib/libaudio-ril.so
 lib/libsecril-client.so:vendor/lib/libsecril-client.so
 vendor/lib/libril-qcril-hook-oem.so
 
 # Samsung libs
-lib/libseckeyprov.so:vendor/lib/libseckeyprov.so
 lib/libsecnativefeature.so:vendor/lib/libsecnativefeature.so
 
 # Security
