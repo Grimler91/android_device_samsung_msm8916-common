@@ -1,12 +1,15 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017-2020 The LineageOS Project
+# Copyright (C) 2017-2021 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 set -e
+
+DEVICE_COMMON=msm8916-common
+VENDOR=samsung
 
 DEVICES_A3="a3lte a33g a3ulte"
 DEVICES_A5="a5ltechn a5ltectc"
@@ -47,35 +50,3 @@ write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
 write_footers
-
-if [ -s "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
-    DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
-
-    # Reinitialize the helper for device specified common
-    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
-
-    # Warning headers and guards
-    write_headers "${DEVICE_SPECIFIED_COMMON_DEVICE}"
-
-    # The standard device specified common blobs
-    write_makefiles "${MY_DIR}/../${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" true
-
-    # Finish
-    write_footers
-
-    DEVICE_COMMON="msm8916-common"
-fi
-
-if [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
-    # Reinitialize the helper for device
-    setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
-
-    # Warning headers and guards
-    write_headers
-
-    # The standard device blobs
-    write_makefiles "${MY_DIR}/../${DEVICE}/proprietary-files.txt" true
-
-    # Finish
-    write_footers
-fi
